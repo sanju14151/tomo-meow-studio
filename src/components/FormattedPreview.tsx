@@ -10,7 +10,7 @@ export function FormattedPreview({ parsedContent }: FormattedPreviewProps) {
       case 'heading':
         const HeadingTag = `h${item.level || 1}` as keyof JSX.IntrinsicElements;
         const headingClasses = [
-          'font-bold text-foreground mb-4',
+          'font-bold text-foreground mb-4 mt-6',
           item.level === 1 && 'text-3xl',
           item.level === 2 && 'text-2xl',
           item.level === 3 && 'text-xl',
@@ -75,6 +75,17 @@ export function FormattedPreview({ parsedContent }: FormattedPreviewProps) {
               </tbody>
             </table>
           </div>
+        );
+
+      case 'list':
+        return (
+          <ul key={index} className="list-disc list-inside mb-4 space-y-2 text-foreground">
+            {item.items?.map((listItem, i) => (
+              <li key={i} className="leading-relaxed">
+                {listItem}
+              </li>
+            ))}
+          </ul>
         );
 
       case 'text':
