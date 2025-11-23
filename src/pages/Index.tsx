@@ -4,76 +4,58 @@ import { FormattedPreview } from "@/components/FormattedPreview";
 import { ExportButton } from "@/components/ExportButton";
 import { parseText } from "@/lib/textParser";
 
-const defaultText = `# UNIT – 5: FILE HANDLING & I/O STREAMS
+const defaultText = `UNIT – 5: FILE HANDLING & I/O STREAMS
 
-## 1. Java I/O Streams – Concepts & Types (10 Marks)
+1. Java I/O Streams – Concepts & Types (10 Marks)
 
-### 10-MARK ANSWER
+10-MARK ANSWER
 
 Java I/O (Input/Output) streams are mechanisms used to read data from sources and write data to destinations like files, networks, keyboards, etc.
 
 Java treats every input/output operation as a stream of data.
 
-### Types of Streams
+Types of Streams
 
-#### 1. Byte Streams
+1. Byte Streams
 Used to read/write binary data.
-
 Classes:
 - FileInputStream
 - FileOutputStream
 
-#### 2. Character Streams
+2. Character Streams
 Used to read/write character data.
-
 Classes:
 - FileReader
 - FileWriter
 
-#### 3. Buffered Streams
+3. Buffered Streams
 Used to improve performance by reducing physical reads/writes.
-
 Classes:
 - BufferedReader
 - BufferedWriter
 - BufferedInputStream
 
-#### 4. Data Streams
+4. Data Streams
 Used to read/write primitive data types.
-
 Classes:
 - DataInputStream
 - DataOutputStream
 
-#### 5. Object Streams
+5. Object Streams
 Used for object serialization.
-
 Classes:
 - ObjectInputStream
 - ObjectOutputStream
 
-### Stream Class Hierarchy
-
-\`\`\`plaintext
-Object
-  |
-Stream
-  /       \\
-InputStream  OutputStream
-  |            |
-FileInputStream FileOutputStream
-\`\`\`
-
-### Advantages
+Advantages
 
 - Promotes modular input/output
 - Supports various data formats
 - Highly efficient with buffering
 - Supports character encoding
 
-### PROGRAM (Simple Read & Write using FileInputStream/FileOutputStream)
+PROGRAM (Simple Read & Write using FileInputStream/FileOutputStream)
 
-\`\`\`java
 import java.io.*;
 
 public class Main {
@@ -92,41 +74,39 @@ public class Main {
         fin.close();
     }
 }
-\`\`\`
 
-## 2. FileInputStream & FileOutputStream (10 Marks)
+2. FileInputStream & FileOutputStream (10 Marks)
 
-### 10-MARK ANSWER
+10-MARK ANSWER
 
 These byte stream classes are used for reading and writing raw binary data.
 
-### FileInputStream
+FileInputStream
 
 Used to read bytes from a file.
 
-**Methods:**
+Methods:
 - read()
 - available()
 - close()
 
-### FileOutputStream
+FileOutputStream
 
 Used to write bytes to a file.
 
-**Methods:**
+Methods:
 - write(int byte)
 - write(byte[] array)
 - close()
 
-### Advantages
+Advantages
 
 - Best for images, audio, PDF, binary files
 - Direct byte-level operations
 - Fast and efficient
 
-### PROGRAM
+PROGRAM
 
-\`\`\`java
 import java.io.*;
 
 public class Main {
@@ -146,40 +126,38 @@ public class Main {
         fin.close();
     }
 }
-\`\`\`
 
-## 3. FileReader & FileWriter (10 Marks)
+3. FileReader & FileWriter (10 Marks)
 
-### 10-MARK ANSWER
+10-MARK ANSWER
 
 These are character streams, used to handle text files (Unicode supported).
 
-### FileReader
+FileReader
 
 Reads characters from a file.
 
-**Methods:**
+Methods:
 - read()
 - close()
 
-### FileWriter
+FileWriter
 
 Writes characters to a file.
 
-**Methods:**
+Methods:
 - write()
 - append()
 - close()
 
-### Advantages
+Advantages
 
 - Supports Unicode
 - Good for text files
 - Easy handling of characters
 
-### PROGRAM
+PROGRAM
 
-\`\`\`java
 import java.io.*;
 
 public class Main {
@@ -196,42 +174,40 @@ public class Main {
         fr.close();
     }
 }
-\`\`\`
 
-## 4. BufferedReader & BufferedWriter (10 Marks)
+4. BufferedReader & BufferedWriter (10 Marks)
 
-### 10-MARK ANSWER
+10-MARK ANSWER
 
 Buffered Streams provide fast I/O operations by reducing disk access.
 
-### BufferedReader
+BufferedReader
 
 Reads text efficiently using a buffer.
 
-**Methods:**
+Methods:
 - readLine() – reads entire line
 - read()
 - close()
 
-### BufferedWriter
+BufferedWriter
 
 Writes text efficiently using a buffer.
 
-**Methods:**
+Methods:
 - write()
 - newLine()
 - flush()
 - close()
 
-### Advantages
+Advantages
 
 - Faster than FileReader/FileWriter
 - Reads whole lines
 - Best for large text files
 
-### PROGRAM
+PROGRAM
 
-\`\`\`java
 import java.io.*;
 
 public class Main {
@@ -250,34 +226,32 @@ public class Main {
         br.close();
     }
 }
-\`\`\`
 
-## 5. Serialization & Deserialization (10 Marks)
+5. Serialization & Deserialization (10 Marks)
 
-### 10-MARK ANSWER
+10-MARK ANSWER
 
-**Serialization** → Converting an object into a stream of bytes.
-**Deserialization** → Restoring the object from the byte stream.
+Serialization → Converting an object into a stream of bytes.
+Deserialization → Restoring the object from the byte stream.
 
 Used for:
 - Storing objects in files
 - Sending objects over network
 - Deep copying
 
-### Steps for Serialization
+Steps for Serialization
 
 1. Class must implement Serializable
 2. Use ObjectOutputStream
 3. Write object using writeObject()
 
-### Steps for Deserialization
+Steps for Deserialization
 
 1. Use ObjectInputStream
 2. Read object using readObject()
 
-### PROGRAM
+PROGRAM
 
-\`\`\`java
 import java.io.*;
 
 class Student implements Serializable {
@@ -307,9 +281,8 @@ public class Main {
         System.out.println("Name: " + s2.name);
     }
 }
-\`\`\`
 
-## UNIT – 5 COMPLETED
+UNIT – 5 COMPLETED
 
 All topics covered with:
 - 10-mark answers

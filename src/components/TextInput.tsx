@@ -11,26 +11,22 @@ export function TextInput({ value, onChange }: TextInputProps) {
       <div className="border-b border-border px-6 py-4">
         <h2 className="text-lg font-semibold text-foreground">Input</h2>
         <p className="text-sm text-cement-gray mt-1">
-          Enter your text with markdown formatting
+          Paste your plain text - automatic formatting applied!
         </p>
       </div>
       <div className="flex-1 p-6">
         <Textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="Start typing your text here...
+          placeholder="Paste your text here...
 
-Examples:
-# Heading 1
-## Heading 2
+Auto-detects:
+✓ Headings (lines with 'Marks', UNIT headers, etc.)
+✓ Java code (import statements, classes, methods)
+✓ Lists (lines starting with -, •, numbers)
+✓ Regular paragraphs
 
-```javascript
-const hello = 'world';
-```
-
-| Column 1 | Column 2 |
-|----------|----------|
-| Data 1   | Data 2   |"
+Just paste and watch the magic! ✨"
           className="h-full min-h-[500px] resize-none font-mono text-sm border-border focus-visible:ring-ring"
         />
       </div>
